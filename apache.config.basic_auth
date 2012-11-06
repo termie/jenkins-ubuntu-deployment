@@ -1,0 +1,24 @@
+<VirtualHost *:80>
+	ServerAdmin webmaster@localhost
+	ServerName jenkins-ci.projectfixup.com
+	ServerAlias ci
+	ProxyRequests Off
+	<Proxy *>
+		Order deny,allow
+		Allow from all
+	</Proxy>
+	<Location />
+	
+	    # Basic Authorization
+	    AuthType Basic
+	    AuthName "Password required"
+	    AuthUserFile /etc/apache2/passwords
+	    Require valid-user
+		
+	    ProxyPassReverse /
+	
+	</Location>
+	
+	ProxyPreserveHost on
+	ProxyPass / http://localhost:8080/
+</VirtualHost>
