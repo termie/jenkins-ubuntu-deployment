@@ -14,6 +14,7 @@ cd jenkins-ubuntu-deployment
 virtualenv venv
 source venv/bin/activate
 pip install -r requirements.txt
+```
 
 ### Deploy Jenkins
 
