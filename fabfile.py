@@ -1,9 +1,14 @@
 import fabric
 from fabric.api import run, cd, env, sudo
 
-env.hosts = ['ec2-184-73-4-10.compute-1.amazonaws.com']
+# ADD YOUR JENKINS CI SERVER HOST HERE
+env.hosts = ['']
+
+# SET YOUR JENKINS CI SERVER (ROOT-ACCESS) USERNAME HERE
 env.user = 'ubuntu'
-env.key_filename = '/home/alan/awspem/projectfixup.pem'
+
+# SET YOUR KEYFILE NAME HERE (your key-pair name .pem file for ec2 instances)
+env.key_filename = ''
 
 
 def setup_machine():
