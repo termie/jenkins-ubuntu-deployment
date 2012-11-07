@@ -20,6 +20,9 @@ def setup_machine():
     sudo('apt-get -y install python-pip')
     sudo('pip install pip --upgrade')
     sudo('pip install virtualenv')
+    sudo('apt-get -y install python2.7-dev')
+    sudo('apt-get -y install libmysqlclient-dev')
+
 
 def setup_apache():
     sudo('apt-get -y install apache2')
